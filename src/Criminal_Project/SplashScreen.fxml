@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Criminal_Project.SplashController">
+    <stylesheets>
+        <URL value="@splash.css" />
+    </stylesheets>
+   <children>
+      <Pane prefHeight="400.0" prefWidth="601.0" styleClass="pane" stylesheets="@style.css">
+         <children>
+            <Label layoutX="97.0" layoutY="40.0" text="BIOMETIC SECURITY CONTROL SYSTEM" />
+            <Label layoutX="248.0" layoutY="114.0" text="(B.S.C.S)" />
+            <Label layoutX="185.0" layoutY="200.0" styleClass="lbAbreviation" text="SECURITY DEPARTMENT" />
+            <Separator layoutX="-3.0" layoutY="353.0" prefHeight="0.0" prefWidth="601.0" styleClass="hseparator" stylesheets="@splash.css" />
+            <Separator layoutX="38.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="1.0" styleClass="vseparator" stylesheets="@splash.css" />
+            <ProgressBar fx:id="ProgressBar" layoutX="281.0" layoutY="292.0" prefHeight="22.0" prefWidth="296.0" progress="0.0" styleClass="lbProgess" />
+            <Label fx:id="lbProgress" layoutX="112.0" layoutY="288.0" styleClass="lbProgess" text="Loading....0%" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

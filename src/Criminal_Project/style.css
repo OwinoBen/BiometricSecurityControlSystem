@@ -1,0 +1,41 @@
+.mainFxmlClass {
+    -fx-background-color: 0,0,0,0;
+}
+.label{
+    -fx-font:"sans-serif, Algeria";
+    -fx-font-size:25px;
+    -fx-text-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-weight:bold;
+}
+.pane{
+    -fx-background-color: grey;
+}
+.lbAbreviation{
+    -fx-text-alignment: center;
+    -fx-font: "sans-serif";
+    -fx-font-size:20;
+    -fx-font-weight:bold;
+}
+.hseparator{
+    -fx-background-color:yellow;
+}
+.vseparator{
+    -fx-background-color: yellow;
+    -fx-border-style: none;
+}
+.lbProgess {
+    -fx-font: "sans-serif";
+    -fx-font-size: 20;
+    -fx-text-fill: ffffff;
+    -fx-font-weight: bold;
+}
+
+.bgLebel{
+    -fx-background-image: url("img/opondo.png");
+}
+
+.LoginPane{
+
+    fx-background-color: 254,254,253;
+}

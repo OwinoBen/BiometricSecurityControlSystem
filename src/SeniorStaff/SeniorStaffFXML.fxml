@@ -1,0 +1,1409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.jfoenix.controls.JFXTimePicker?>-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="1250.0" style="-fx-background-color: #002346;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SeniorStaff.SeniorStaffController">
+   <children>
+      <Pane prefHeight="110.0" prefWidth="1250.0" style="-fx-background-color: #00162d;">
+         <children>
+            <Label fx:id="labelWelcome" layoutX="78.0" layoutY="14.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="228.0" text="Welcome &quot;username from db&quot;" textFill="#e1d3d3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelRank" layoutX="78.0" layoutY="29.0" lineSpacing="2.0" prefHeight="27.0" prefWidth="89.0" text="Rank" textFill="#e1d3d3">
+               <padding>
+                  <Insets left="5.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="Times New Roman Italic" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageView" fitHeight="58.0" fitWidth="78.0" pickOnBounds="true">
+               <image>
+<!--                  <Image url="@../../../Downloads/Music/office-1730940__340.jpg" />-->
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="58.0" layoutX="650.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 5px;">
+               <image>
+                  <Image url="@../../../BiometricSecurityControlSystem/src/Criminal_Project/img/logo.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelTime" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" layoutX="975.0" layoutY="8.0" lineSpacing="2.0" prefHeight="45.0" prefWidth="246.0" text="5:09:20 PM" textAlignment="CENTER" textFill="#c9c0c0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDate" layoutX="1040.0" layoutY="69.0" prefHeight="20.0" prefWidth="150.0" style="-fx-text-fill: &quot;0x897C73&quot;;" text="Friday July 26 2020" textFill="#dacece">
+               <font>
+                  <Font name="Georgia Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelNavigation" layoutX="201.0" layoutY="83.0" opacity="0.78" prefHeight="27.0" prefWidth="122.0" style="-fx-background-color: &quot;0xB03528&quot;;" styleClass="navigation-status" stylesheets="@staff.css" text="Dashboard" />
+<!--            <FontAwesomeIconView fx:id="Logout" fill="#ba3723" glyphName="SIGN_OUT" layoutX="821.0" layoutY="53.0" size="30" />-->
+            <Button fx:id="btnLogout" layoutX="815.0" layoutY="26.0" mnemonicParsing="false" onAction="#Logout" prefHeight="32.0" prefWidth="136.0" stylesheets="@staff.css" text="Logout" textFill="#c8cd76">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="1.0" layoutY="110.0" prefHeight="570.0" prefWidth="200.0" style="-fx-background-color: #002346;">
+         <children>
+            <Button fx:id="btnCriminals" alignment="BASELINE_LEFT" layoutY="60.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="58.0" prefWidth="200.0" stylesheets="@staff.css" text="Criminal List">
+               <graphic>
+<!--                  <FontAwesomeIconView fill="#757373" glyphName="LIST" size="20" />-->
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDashboard" alignment="BASELINE_LEFT" layoutY="-6.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="75.0" prefWidth="200.0" stylesheets="@staff.css" text="Dashboard">
+               <graphic>
+<!--                  <FontAwesomeIconView fill="#757373" glyphName="HOME" size="20" />-->
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnChangePassword" alignment="TOP_LEFT" layoutY="350.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="75.0" prefWidth="200.0" stylesheets="@staff.css" text="Change Password">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+<!--            <FontAwesomeIconView fill="#757373" glyphName="GEAR" layoutX="5.0" layoutY="394.0" size="20" wrappingWidth="17.14285659790039" />-->
+            <Button fx:id="btnAddCriminal" alignment="BASELINE_LEFT" layoutY="118.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="58.0" prefWidth="200.0" stylesheets="@staff.css" text="Add Criminal">
+               <graphic>
+<!--                  <FontAwesomeIconView fill="#757373" glyphName="USER_PLUS" size="20" />-->
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOfficer" alignment="BASELINE_LEFT" layoutY="176.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="58.0" prefWidth="200.0" stylesheets="@staff.css" text="Officer">
+               <graphic>
+<!--                  <FontAwesomeIconView fill="#757373" glyphName="GROUP" size="20" />-->
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnReport" alignment="BASELINE_LEFT" layoutY="234.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="58.0" prefWidth="200.0" stylesheets="@staff.css" text="Report">
+               <graphic>
+<!--                  <FontAwesomeIconView fill="#757373" glyphName="BOOK" size="20" />-->
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnHelp" alignment="BASELINE_LEFT" layoutY="292.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="58.0" prefWidth="200.0" stylesheets="@staff.css" text="Help">
+               <graphic>
+<!--                  <FontAwesomeIconView fill="#757373" glyphName="QUESTION" size="20" />-->
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="mainPane" layoutX="201.0" layoutY="110.0" prefHeight="570.0" prefWidth="1050.0">
+         <children>
+            <Pane fx:id="dashBordPane" prefHeight="190.0" prefWidth="184.0" />
+            <Pane fx:id="reportPane" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="changePanel" prefHeight="570.0" prefWidth="1042.0" style="-fx-background-color: gray;" styleClass="borderPane" stylesheets="@staff.css">
+               <children>
+                  <Pane layoutX="279.0" layoutY="69.0" prefHeight="433.0" prefWidth="527.0">
+                     <children>
+                        <Pane fx:id="paneNewPass" prefHeight="433.0" prefWidth="526.0" style="-fx-background-color: &quot;0xE9E9E9&quot;; -fx-border-color: &quot;0xC0C0C0&quot;;">
+                           <children>
+                              <Label layoutX="57.0" layoutY="14.0" text="Password Reset" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="Georgia Bold Italic" size="48.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnResetPass" layoutX="89.0" layoutY="275.0" mnemonicParsing="false" onAction="#PasswordChange" prefHeight="39.0" prefWidth="332.0" text="Reset">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <PasswordField fx:id="txtNewPass" alignment="CENTER" layoutX="89.0" layoutY="108.0" prefHeight="46.0" prefWidth="332.0" promptText="New Password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                              <PasswordField fx:id="txtConfirmPass" alignment="CENTER" layoutX="89.0" layoutY="194.0" prefHeight="46.0" prefWidth="332.0" promptText="Confirm Password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="paneVerify" prefHeight="433.0" prefWidth="526.0" style="-fx-background-color: &quot;0xE9E9E9&quot;;">
+                           <children>
+                              <TextField fx:id="txtPaseCode" alignment="CENTER" layoutX="95.0" layoutY="144.0" prefHeight="46.0" prefWidth="332.0" promptText="Paste Code Here">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="65.0" layoutY="32.0" text="Password Reset" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="Georgia Bold Italic" size="48.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnVerify" layoutX="189.0" layoutY="257.0" mnemonicParsing="false" onAction="#PasswordChange" prefHeight="39.0" prefWidth="143.0" text="Veify">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="paneSend" prefHeight="433.0" prefWidth="527.0" style="-fx-background-color: &quot;0xE9E9E9&quot;; -fx-border-color: &quot;0xC0C0C0&quot;;">
+                           <children>
+                              <TextField fx:id="txtEmailPassword" alignment="CENTER" layoutX="86.0" layoutY="147.0" prefHeight="46.0" prefWidth="390.0" promptText="Enter Valid Email">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnSend" layoutX="181.0" layoutY="228.0" mnemonicParsing="false" onAction="#PasswordChange" prefHeight="46.0" prefWidth="169.0" text="Send">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="56.0" layoutY="32.0" text="Password Reset" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="Georgia Bold Italic" size="48.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="officerPane" prefHeight="570.0" prefWidth="1050.0" style="-fx-background-color: &quot;0xC0C0C0&quot;;">
+               <children>
+                  <Pane layoutX="14.0" layoutY="8.0" prefHeight="513.0" prefWidth="1009.0" style="-fx-border-color: #737373;">
+                     <children>
+                        <TextField fx:id="txtOfficerLastName" layoutX="184.0" layoutY="92.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <Label layoutX="230.0" layoutY="123.0" text="Last Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="123.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtOfficerFirstName" layoutX="393.0" layoutY="92.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <Label layoutX="439.0" layoutY="123.0" text="First Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="332.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtOfficerMiddleName" layoutX="609.0" layoutY="93.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <Label layoutX="655.0" layoutY="124.0" text="Middle Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="759.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
+                        <TableView fx:id="officerTable" layoutX="152.0" layoutY="263.0" prefHeight="251.0" prefWidth="682.0">
+                           <columns>
+                              <TableColumn fx:id="colmofficerId" prefWidth="107.0" text="OFFICER ID" />
+                              <TableColumn fx:id="colmOfficerEmail" prefWidth="250.0" text="EMAIL" />
+                              <TableColumn fx:id="colmOfficerRank" prefWidth="143.0" text="RANK" />
+                              <TableColumn fx:id="colmOfficerName" prefWidth="181.0" text="NAME" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="officerSearch" layoutX="405.0" layoutY="225.0" prefHeight="31.0" prefWidth="200.0" promptText="Search Officer" style="-fx-background-color: white;">
+                           <font>
+                              <Font name="Times New Roman Bold" size="14.0" />
+                           </font>
+                        </TextField>
+<!--                        <FontAwesomeIconView fill="#6b5959" glyphName="SEARCH" layoutX="588.0" layoutY="247.0" opacity="0.71" size="18" />-->
+                        <TextField fx:id="txtOfficerId" alignment="CENTER" layoutX="400.0" layoutY="10.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="462.0" layoutY="58.0" text="OFFICER ID">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtOfficerRank" layoutX="184.0" layoutY="17.0" prefHeight="31.0" prefWidth="200.0" promptText="Enter Valid Phone Number" style="-fx-background-color: white;" />
+                        <Label layoutX="227.0" layoutY="185.0" text="Rank">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="436.0" layoutY="185.0" text="Password">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtOfficerEmail" layoutX="659.0" layoutY="17.0" prefHeight="31.0" prefWidth="200.0" promptText="Enter Valid Email Address" style="-fx-background-color: white;" />
+                        <Label layoutX="652.0" layoutY="186.0" text="Confirm Password">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="ComboBoxOfficerRank" layoutX="199.0" layoutY="157.0" prefWidth="150.0" />
+                        <PasswordField fx:id="txtOfficerPass" layoutX="394.0" layoutY="152.0" prefHeight="30.0" prefWidth="195.0" />
+                        <PasswordField fx:id="txtCofficeronfirmPass" layoutX="640.0" layoutY="155.0" prefHeight="30.0" prefWidth="195.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="15.0" layoutY="521.0" prefHeight="33.0" prefWidth="1009.0" style="-fx-background-color: #00162d;" stylesheets="@staff.css">
+                     <children>
+                        <Button fx:id="btnOfficerExit" layoutX="887.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="97.0" text="EXIT">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnOfficerUpdate" layoutX="582.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="176.0" text="UPDATE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnOfficerAdd" layoutX="287.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="176.0" text="ADD OFFICER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+<!--                        <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="896.0" layoutY="23.0" size="20" />-->
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="paneUpdate" prefHeight="611.0" prefWidth="998.0">
+               <children>
+                  <Pane prefHeight="102.0" prefWidth="1015.0" style="-fx-background-color: &quot;0x3F3F3F&quot;;">
+                     <children>
+                        <Label layoutX="136.0" layoutY="21.0" text="CRIMINAL NO  :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="137.0" layoutY="62.0" text="CRIMINAL        :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCriminalNo1" editable="false" layoutX="243.0" layoutY="17.0" prefHeight="29.0" prefWidth="246.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0; -fx-text-fill: &quot;0xEECB89&quot;; -fx-font-we: bold; -fx-alignment: center;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtCriminal1" alignment="CENTER" editable="false" layoutX="243.0" layoutY="57.0" prefHeight="29.0" prefWidth="246.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0; -fx-text-fill: &quot;0xEECB89&quot;;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="508.0" layoutY="19.0" prefHeight="20.0" prefWidth="97.0" text="CASE NO  :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="508.0" layoutY="62.0" prefHeight="20.0" prefWidth="72.0" text="STATUS    :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCaseNoDisplay1" editable="false" layoutX="581.0" layoutY="17.0" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtStatus1" editable="false" layoutX="580.0" layoutY="57.0" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="790.0" layoutY="21.0" prefHeight="20.0" prefWidth="97.0" text="CASE STATUS  :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="caseStatus1" editable="false" layoutX="895.0" layoutY="15.0" prefHeight="29.0" prefWidth="106.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Pane layoutX="14.0" layoutY="10.0" prefHeight="75.0" prefWidth="106.0">
+                           <children>
+                              <ImageView fx:id="viewImage1" fitHeight="75.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" />
+<!--                              <FontAwesomeIconView fx:id="userphoto1" glyphName="USER" layoutX="24.0" layoutY="66.0" opacity="0.5" size="80" />-->
+                              <Button fx:id="btnUpload1" mnemonicParsing="false" onAction="#chooseFile" opacity="0.24" prefHeight="75.0" prefWidth="106.0" style="-fx-background-color: gray;" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="4.0" layoutY="102.0" prefHeight="460.0" prefWidth="1009.0" style="-fx-background-color: &quot;0xC0C0C0&quot;;">
+                     <children>
+                        <Pane layoutX="7.0" layoutY="14.0" prefHeight="75.0" prefWidth="992.0" style="-fx-border-color: #737373;">
+                           <children>
+                              <TextField fx:id="txtCriminalDetailLastName1" layoutX="14.0" layoutY="13.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                              <Label layoutX="60.0" layoutY="44.0" text="Last Name">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="123.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                              <TextField fx:id="txtCriminalDetailFirstName1" layoutX="223.0" layoutY="13.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                              <Label layoutX="269.0" layoutY="44.0" text="First Name">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="332.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                              <TextField fx:id="txtCriminalDetailMiddleName1" layoutX="439.0" layoutY="14.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                              <Label layoutX="485.0" layoutY="45.0" text="Middle Name">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="691.0" layoutY="43.0" text="Nationality">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="759.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
+                              <Label layoutX="875.0" layoutY="43.0" text="Gender">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="919.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
+                              <TextField fx:id="txtCriminalDetailNationality1" layoutX="650.0" layoutY="13.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: white;" />
+                              <TextField fx:id="txtCriminalDetailGender" layoutX="807.0" layoutY="13.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: white;" />
+                           </children>
+                        </Pane>
+                        <VBox layoutX="23.0" layoutY="215.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                           <children>
+                              <TextField fx:id="txtCriminalDetailID1" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="National ID">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCriminalDetailEmail1" onAction="#validateEmail" prefHeight="36.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Email">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCriminalDetailPhone1" layoutX="26.0" layoutY="26.0" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Phone No">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="252.0" layoutY="215.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                           <children>
+                              <TextField fx:id="txtCriminalDetailPostallAddress1" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Postal Address">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCriminalDetailZipCode1" prefHeight="36.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="zip  Code">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCriminalDetailCity1" layoutX="26.0" layoutY="26.0" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="City/Town">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="533.0" layoutY="215.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                           <children>
+                              <DatePicker fx:id="datePickerBirthDte1" prefHeight="31.0" prefWidth="161.0">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Label text="Date of birth">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCriminalDetailBornIn1" prefHeight="31.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Born In">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCriminalDetailProvinc" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: white;">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Province">
+                                 <VBox.margin>
+                                    <Insets left="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Pane fx:id="txtCriminalDetailNationality" layoutX="9.0" layoutY="98.0" prefHeight="67.0" prefWidth="992.0" style="-fx-border-color: #737373;">
+                           <children>
+                              <TextField fx:id="txtCriminalDetailCounty1" layoutX="14.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                              <Label layoutX="60.0" layoutY="40.0" text="county">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="102.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                              <TextField fx:id="txtCriminalDetailConstituency1" layoutX="165.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                              <Label layoutX="210.0" layoutY="40.0" text="Constinuency">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="292.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                              <TextField fx:id="txtCriminalDetailWard1" layoutX="318.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                              <Label layoutX="357.0" layoutY="39.0" text="Ward">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="390.0" layoutY="39.0" text="*" textFill="#ee1f1f" />
+                              <TextField fx:id="txtCriminalDetailLocation1" layoutX="472.0" layoutY="9.0" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: white;" />
+                              <Label layoutX="520.0" layoutY="38.0" text="Location">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="572.0" layoutY="39.0" text="*" textFill="#ee1f1f" />
+                              <TextField fx:id="txtCriminalDetailSublocation1" layoutX="646.0" layoutY="9.0" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: white;" />
+                              <Label layoutX="709.0" layoutY="39.0" text="Sublocation">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="782.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                              <Label layoutX="882.0" layoutY="39.0" text="Status">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="924.0" layoutY="40.0" text="*" textFill="#ee1f1f" />
+                              <TextField fx:id="txtCriminalDetailStatu" layoutX="826.0" layoutY="9.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: white;" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="748.0" layoutY="215.0" prefHeight="217.0" prefWidth="246.0" style="-fx-border-color: #737373;">
+                           <children>
+                              <TextArea fx:id="textAreaStatement" layoutY="1.0" prefHeight="217.0" prefWidth="246.0" promptText="UPDATE STATEMENT HERE." />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="crininalsListPane" layoutX="-1.0" prefHeight="570.0" prefWidth="1042.0" styleClass="borderPane" stylesheets="@staff.css">
+               <children>
+                  <Pane layoutX="14.0" layoutY="61.0" prefHeight="448.0" prefWidth="1015.0" style="-fx-background-color: white;">
+                     <children>
+                        <TableView fx:id="tableView" editable="true" layoutX="-10.0" onSort="#handleClicks" opacity="0.87" prefHeight="408.0" prefWidth="990.0" style="-fx-border-color: &quot;0xDBDBDB&quot;;" styleClass="column-header-background" stylesheets="@staff.css">
+                           <columns>
+                              <TableColumn fx:id="tableCriminal" prefWidth="157.0" text="CRIMINAL NO" />
+                              <TableColumn fx:id="tableName" prefWidth="207.0" text="NAME" />
+                              <TableColumn fx:id="tableGender" prefWidth="159.0" text="GENDER" />
+                              <TableColumn fx:id="tableCase" prefWidth="180.0" text="CASE NO" />
+                              <TableColumn fx:id="tableStatus" prefWidth="138.0" resizable="false" text="STATUS" />
+                              <TableColumn fx:id="tableAction" prefWidth="198.0" text="ACTION" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="21.0" layoutY="514.0" prefHeight="38.0" prefWidth="1015.0" style="-fx-background-color: &quot;0XC0C0C0&quot;;">
+                     <children>
+<!--                        <FontAwesomeIconView fx:id="refersh" fill="#bc0a0a" glyphName="REFRESH" layoutX="24.0" layoutY="26.0" opacity="0.54" size="20" />-->
+                        <Button fx:id="btnProfile" layoutX="867.0" layoutY="5.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="View Profile" />
+                        <Pane layoutX="-22.0" layoutY="2.0" prefHeight="45.0" prefWidth="998.0" style="-fx-background-color: #00162d;" stylesheets="@staff.css">
+                           <children>
+                              <Button fx:id="btnExit" layoutX="887.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="97.0" text="EXIT">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="updateCriminalDetail" layoutX="580.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Criminal Details">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="updateStatement" layoutX="286.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Stament">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="updateCaseStatus" layoutX="27.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Case Status">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+      <!--                        <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="895.0" layoutY="30.0" size="20" />-->
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="8.0" prefHeight="58.0" prefWidth="1026.0" style="-fx-background-color: &quot;0XDFDFDF&quot;;">
+                     <children>
+                        <TextField fx:id="txtSearch" alignment="CENTER" layoutX="715.0" layoutY="15.0" prefHeight="27.0" prefWidth="256.0" />
+                        <Label layoutX="958.0" layoutY="15.0" prefHeight="27.0" prefWidth="41.0" styleClass="search" stylesheets="@staff.css" />
+                        <ComboBox fx:id="comboClasification" layoutX="176.0" layoutY="16.0" prefHeight="27.0" prefWidth="219.0" style="-fx-background-color: white;" />
+                        <Label layoutX="52.0" layoutY="21.0" text="CLASSIFICATION :" textFill="#545454">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </Label>
+<!--                        <FontAwesomeIconView fx:id="search" fill="#949191" glyphName="SEARCH" layoutX="968.0" layoutY="34.0" size="15" styleClass="search" wrappingWidth="21.928571701049805" />-->
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="addCriminalPane" prefHeight="570.0" prefWidth="1042.0" styleClass="borderPane" stylesheets="@staff.css">
+               <children>
+                  <Pane layoutX="14.0" layoutY="8.0" prefHeight="102.0" prefWidth="1015.0" style="-fx-background-color: #002346;">
+                     <children>
+                        <Label layoutX="136.0" layoutY="21.0" text="CRIMINAL NO  :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="137.0" layoutY="62.0" text="CRIMINAL        :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCriminalNo" editable="false" layoutX="243.0" layoutY="17.0" prefHeight="29.0" prefWidth="246.0" style="-fx-background-color: #00162d #00162d; -fx-background-radius: 0; -fx-text-fill: &quot;0xEECB89&quot;; -fx-font-we: bold; -fx-alignment: center;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtCriminal" alignment="CENTER" editable="false" layoutX="243.0" layoutY="57.0" prefHeight="29.0" prefWidth="246.0" style="-fx-background-color: #00162d; -fx-background-radius: 0; -fx-text-fill: &quot;0xEECB89&quot;;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="508.0" layoutY="19.0" prefHeight="20.0" prefWidth="97.0" text="CASE NO  :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="508.0" layoutY="62.0" prefHeight="20.0" prefWidth="72.0" text="STATUS    :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCaseNoDisplay" editable="false" layoutX="581.0" layoutY="17.0" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: #00162d; -fx-background-radius: 0;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtStatus" editable="false" layoutX="580.0" layoutY="57.0" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: #00162d; -fx-background-radius: 0;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="790.0" layoutY="21.0" prefHeight="20.0" prefWidth="97.0" text="CASE STATUS  :" textFill="#bfb8b8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="caseStatus" editable="false" layoutX="895.0" layoutY="15.0" prefHeight="29.0" prefWidth="106.0" style="-fx-background-color: #00162d; -fx-background-radius: 0;" styleClass="cell">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Pane layoutX="14.0" layoutY="10.0" prefHeight="75.0" prefWidth="106.0">
+                           <children>
+                              <ImageView fx:id="viewImage" fitHeight="75.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" />
+<!--                              <FontAwesomeIconView fx:id="userphoto" glyphName="USER" layoutX="24.0" layoutY="66.0" opacity="0.5" size="80" />-->
+                              <Label fx:id="lbUpload" layoutX="7.0" layoutY="52.0" style="-fx-text-fill: #d3ced3; -fx-font-size: 15; -fx-font-weight: bold;" text="Upload Photo" />
+                              <Button fx:id="btnUpload" mnemonicParsing="false" onAction="#chooseFile" opacity="0.24" prefHeight="75.0" prefWidth="106.0" style="-fx-background-color: gray;" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="addcriminalMain" layoutX="14.0" layoutY="109.0" prefHeight="457.0" prefWidth="1015.0">
+                     <children>
+                        <Pane fx:id="petionerPane" layoutY="-1.0" prefHeight="460.0" prefWidth="1015.0" style="-fx-background-color: #bfbfbf;">
+                           <children>
+                              <Pane layoutX="9.0" layoutY="32.0" prefHeight="376.0" prefWidth="998.0" style="-fx-border-color: #737373; -fx-border-width: 1px;">
+                                 <children>
+                                    <TextField fx:id="txtPetitonerLastName" layoutX="23.0" layoutY="19.0" prefHeight="31.0" prefWidth="212.0" style="-fx-background-color: FFFFFF;" />
+                                    <Label layoutX="52.0" layoutY="49.0" text="Last Name ">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="117.0" layoutY="48.0" style="-fx-text-fill: red;" text="*">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtPetitonerfirstName" layoutX="277.0" layoutY="17.0" prefHeight="31.0" prefWidth="212.0" style="-fx-background-color: FFFFFF;" />
+                                    <Label layoutX="349.0" layoutY="47.0" text="First Name">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="415.0" layoutY="48.0" style="-fx-text-fill: red;" text="*">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="comboboxStatus" layoutX="822.0" layoutY="20.0" prefWidth="150.0" style="-fx-background-color: FFFFFF;" />
+                                    <Label layoutX="887.0" layoutY="48.0" text="Status">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="919.0" layoutY="47.0" style="-fx-text-fill: red;" text="*">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox layoutX="6.0" layoutY="80.0" prefHeight="291.0" prefWidth="246.0" style="-fx-border-color: #737373;">
+                                       <children>
+                                          <TextField fx:id="txtPtionerPostal" prefHeight="36.0" prefWidth="204.0" style="-fx-background-color: white;">
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label text="Postal Code">
+                                             <VBox.margin>
+                                                <Insets left="80.0" right="20.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtPetionerZipcode" layoutX="31.0" layoutY="31.0" prefHeight="36.0" prefWidth="204.0" style="-fx-background-color: white;">
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label layoutX="91.0" layoutY="56.0" text="Zip Code">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="80.0" right="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtPetionerCity" layoutX="11.0" layoutY="73.0" prefHeight="36.0" prefWidth="204.0" style="-fx-background-color: white;">
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label layoutX="11.0" layoutY="98.0" prefHeight="17.0" prefWidth="159.0" text="City/Town">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="80.0" right="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="259.0" layoutY="80.0" prefHeight="291.0" prefWidth="246.0" style="-fx-border-color: #737373;">
+                                       <children>
+                                          <TextField fx:id="txtPettionerID" prefHeight="36.0" prefWidth="204.0" style="-fx-background-color: white;">
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label text="National ID">
+                                             <VBox.margin>
+                                                <Insets left="80.0" right="20.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtPetionerPhone" layoutX="31.0" layoutY="31.0" prefHeight="36.0" prefWidth="204.0" style="-fx-background-color: white;">
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label layoutX="91.0" layoutY="56.0" text="Phone No">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="80.0" right="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="comboboxPetionerGender" prefHeight="31.0" prefWidth="204.0" promptText="Gender">
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </ComboBox>
+                                          <Label layoutX="11.0" layoutY="98.0" prefHeight="17.0" prefWidth="159.0" text="Gender">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="80.0" right="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtPetionerFIR" alignment="CENTER" editable="false" layoutX="31.0" layoutY="104.0" prefHeight="36.0" prefWidth="204.0" style="-fx-background-color: white;">
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label prefHeight="17.0" prefWidth="50.0" text="FIR">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="80.0" right="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <TextField fx:id="txtPetitonerMiddleName" layoutX="538.0" layoutY="17.0" prefHeight="31.0" prefWidth="212.0" style="-fx-background-color: FFFFFF;" />
+                                    <Label layoutX="610.0" layoutY="47.0" text="Middle Name">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="509.0" layoutY="66.0" text="Case  Info">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="510.0" layoutY="80.0" prefHeight="257.0" prefWidth="472.0" style="-fx-border-color: &quot;0x838383&quot;;">
+                                       <children>
+                                          <TextField fx:id="txtCaseNo" alignment="CENTER" editable="false" layoutX="12.0" layoutY="7.0" prefHeight="33.0" prefWidth="195.0" style="-fx-background-color: white;">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <ComboBox fx:id="ComboboxOffence" layoutX="225.0" layoutY="9.0" prefHeight="34.0" prefWidth="204.0" />
+                                          <ComboBox fx:id="comboboxLawSection" layoutX="18.0" layoutY="101.0" prefHeight="34.0" prefWidth="195.0" />
+                                          <TextField fx:id="txtCaseDetail" layoutX="229.0" layoutY="101.0" prefHeight="34.0" prefWidth="204.0" style="-fx-background-color: white;" />
+                                          <Label layoutX="62.0" layoutY="43.0" text="Case No.">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="282.0" layoutY="43.0" text="Offence">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="65.0" layoutY="139.0" text="Section Of Law">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="285.0" layoutY="131.0" text="Case Detail">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="286.0" layoutY="219.0" text="Investigation Officer">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="95.0" layoutY="219.0" text="Status">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="comboboxStatus1" layoutX="19.0" layoutY="185.0" prefHeight="34.0" prefWidth="195.0" />
+                                          <ComboBox fx:id="comboboxInvestigationOfficer" layoutX="230.0" layoutY="185.0" prefHeight="34.0" prefWidth="195.0" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Label layoutX="14.0" layoutY="14.0" text="Victim">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane layoutY="418.0" prefHeight="45.0" prefWidth="1015.0" style="-fx-background-color: #00162d;">
+                                 <children>
+                                    <Button fx:id="btnPetionerFinish" layoutX="883.0" layoutY="8.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="121.0" text="Finish">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnPertionerBack" layoutX="753.0" layoutY="8.0" mnemonicParsing="false" onAction="#PageScroller" prefHeight="29.0" prefWidth="106.0" text="Back">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnPertionerAdd" layoutX="640.0" layoutY="8.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="29.0" prefWidth="106.0" text="Add">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="casePane" prefHeight="460.0" prefWidth="1015.0" style="-fx-background-color: &quot;0XC0C0C0&quot;;">
+                           <children>
+                              <Pane layoutX="13.0" layoutY="23.0" prefHeight="395.0" prefWidth="990.0" style="-fx-border-color: &quot;0x838383&quot;;">
+                                 <children>
+                                    <Pane layoutX="520.0" layoutY="25.0" prefHeight="257.0" prefWidth="456.0" style="-fx-border-color: &quot;0x838383&quot;;">
+                                       <children>
+                                          <Label layoutX="178.0" layoutY="51.0" text="FIR ID">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <TextField fx:id="txtxFIRID" alignment="CENTER" editable="false" layoutX="84.0" layoutY="12.0" prefHeight="34.0" prefWidth="256.0" style="-fx-background-color: white;">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font></TextField>
+                                          <DatePicker fx:id="datealaodged" layoutX="51.0" layoutY="72.0" prefHeight="30.0" prefWidth="174.0" />
+                                          <DatePicker fx:id="incidentDate" layoutX="51.0" layoutY="132.0" prefHeight="30.0" prefWidth="174.0" />
+                                          <TextField fx:id="incedentPlace" layoutX="51.0" layoutY="184.0" prefHeight="30.0" prefWidth="174.0" />
+                                          <Label layoutX="99.0" layoutY="102.0" text="Date Lodged">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="294.0" layoutY="102.0" text="Time Lodged">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="111.0" layoutY="160.0" text="Incedent Date">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="294.0" layoutY="160.0" text="Incedent Time">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="111.0" layoutY="214.0" text="Incedent Place">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtCasePetioner" layoutX="241.0" layoutY="185.0" prefHeight="58.0" prefWidth="149.0" promptText="Pettioners">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+<!--                                          <JFXTimePicker fx:id="timeLodged" defaultColor="#7b9a97" layoutX="241.0" layoutY="69.0" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: white;" />-->
+<!--                                          <JFXTimePicker fx:id="incedentTime" defaultColor="#7b9a97" layoutX="241.0" layoutY="131.0" prefHeight="29.0" prefWidth="171.0" style="-fx-background-color: white;" />-->
+
+                                       </children>
+                                    </Pane>
+                                    <Label layoutX="520.0" layoutY="9.0" text="FIR">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <TextArea fx:id="TextAreaDetail" layoutX="520.0" layoutY="282.0" prefHeight="110.0" prefWidth="456.0" promptText="FIR Detail or Case Statement">
+                                       <font>
+                                          <Font name="Times New Roman" size="12.0" />
+                                       </font>
+                                    </TextArea>
+                                    <Pane layoutX="1.0" layoutY="399.0" prefHeight="34.0" prefWidth="990.0" style="-fx-background-color: #00162d;">
+                                       <children>
+                                          <Button fx:id="btnCaseNext" layoutX="887.0" layoutY="2.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="83.0" text="Next">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnBack" layoutX="773.0" layoutY="2.0" mnemonicParsing="false" onAction="#PageScroller" prefHeight="31.0" prefWidth="84.0" text="Back">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="24.0" layoutY="26.0" prefHeight="359.0" prefWidth="483.0" style="-fx-border-color: #737373;">
+                                       <children>
+                                          <TextField fx:id="txtVictimLastName" layoutX="7.0" layoutY="21.0" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: FFFFFF;" />
+                                          <Label layoutX="44.0" layoutY="49.0" text="Last Name">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtVictimFirstName" layoutX="163.0" layoutY="21.0" prefHeight="29.0" prefWidth="157.0" style="-fx-background-color: FFFFFF;" />
+                                          <Label layoutX="203.0" layoutY="49.0" text="First Name">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtVictimMddleName" layoutX="328.0" layoutY="21.0" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: FFFFFF;" />
+                                          <Label layoutX="362.0" layoutY="49.0" text="Middle Name">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="126.0" layoutY="49.0" style="-fx-text-fill: red;" text="*">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="286.0" layoutY="49.0" style="-fx-text-fill: red;" text="*">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Pane layoutX="8.0" layoutY="77.0" prefHeight="272.0" prefWidth="463.0" style="-fx-border-color: #737373;">
+                                             <children>
+                                                <VBox layoutX="-4.0" prefHeight="200.0" prefWidth="246.0">
+                                                   <children>
+                                                      <TextField fx:id="txtVictimPostcode" prefHeight="38.0" prefWidth="186.0" style="-fx-background-color: white;">
+                                                         <VBox.margin>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <Label text="Post code ">
+                                                         <VBox.margin>
+                                                            <Insets left="70.0" />
+                                                         </VBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtVictimCounty" layoutX="30.0" layoutY="30.0" prefHeight="38.0" prefWidth="186.0" style="-fx-background-color: white;">
+                                                         <VBox.margin>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <Label layoutX="60.0" layoutY="62.0" text="County">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="70.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtPetionerConstituency" layoutX="30.0" layoutY="105.0" prefHeight="38.0" prefWidth="186.0" style="-fx-background-color: white;">
+                                                         <VBox.margin>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <Label layoutX="60.0" layoutY="124.0" text="Constituency">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="70.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="231.0" prefHeight="200.0" prefWidth="235.0">
+                                                   <children>
+                                                      <TextField fx:id="txtVictimZipcode" prefHeight="34.0" prefWidth="195.0" style="-fx-background-color: white;">
+                                                         <VBox.margin>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <Label text="Zip Code">
+                                                         <VBox.margin>
+                                                            <Insets left="80.0" />
+                                                         </VBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtVictimCity" prefHeight="35.0" prefWidth="195.0" style="-fx-background-color: white;">
+                                                         <VBox.margin>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <Label text="City/town">
+                                                         <VBox.margin>
+                                                            <Insets left="80.0" />
+                                                         </VBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtPetionerLocation" prefHeight="38.0" prefWidth="186.0" style="-fx-background-color: white;">
+                                                         <VBox.margin>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <Label text="Location">
+                                                         <VBox.margin>
+                                                            <Insets left="80.0" />
+                                                         </VBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <TextField fx:id="txtPetionerNationalID" layoutX="14.0" layoutY="211.0" prefHeight="36.0" prefWidth="204.0" style="-fx-background-color: white;" />
+                                                <Label layoutX="54.0" layoutY="247.0" prefHeight="22.0" prefWidth="164.0" text="Petioner National ID ">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtPetionerPhoneNo" layoutX="247.0" layoutY="211.0" prefHeight="36.0" prefWidth="204.0" style="-fx-background-color: white;" />
+                                                <Label layoutX="267.0" layoutY="247.0" prefHeight="22.0" prefWidth="164.0" text="Petioner Phone Number ">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </Pane>
+                                    <Label layoutX="25.0" layoutY="10.0" style="-fx-font-style: italic;" text="Petioner" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="99.0" style="-fx-font-style: italic;" text="FIR and Petioner" />
+                           </children></Pane>
+                        <Pane fx:id="criminalDetailsPane" layoutX="-1.0" prefHeight="460.0" prefWidth="1015.0" style="-fx-background-color: &quot;0xC0C0C0&quot;;">
+                           <children>
+                              <Pane layoutX="10.0" layoutY="22.0" prefHeight="75.0" prefWidth="998.0" style="-fx-border-color: #737373;">
+                                 <children>
+                                    <TextField fx:id="txtCriminalDetailLastName" layoutX="14.0" layoutY="13.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                                    <Label layoutX="60.0" layoutY="44.0" text="Last Name">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="123.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                                    <TextField fx:id="txtCriminalDetailFirstName" layoutX="223.0" layoutY="13.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                                    <Label layoutX="269.0" layoutY="44.0" text="First Name">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="332.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                                    <TextField fx:id="txtCriminalDetailMiddleName" layoutX="439.0" layoutY="14.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                                    <Label layoutX="485.0" layoutY="45.0" text="Middle Name">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="691.0" layoutY="43.0" text="Nationality">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="759.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
+                                    <ComboBox fx:id="comboboxCrinalDetailNationality" layoutX="650.0" layoutY="13.0" prefHeight="29.0" prefWidth="164.0" style="-fx-background-color: #FFFFFF;" />
+                                    <Label layoutX="875.0" layoutY="43.0" text="Gender">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="919.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
+                                    <ComboBox fx:id="comboboxCrinalDetailGender" layoutX="834.0" layoutY="13.0" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="105.0" prefHeight="67.0" prefWidth="998.0" style="-fx-border-color: #737373;">
+                                 <children>
+                                    <TextField fx:id="txtCriminalDetailCounty" layoutX="14.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                                    <Label layoutX="60.0" layoutY="40.0" text="county">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="102.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                                    <TextField fx:id="txtCriminalDetailConstituency" layoutX="165.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                                    <Label layoutX="210.0" layoutY="40.0" text="Constinuency">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="292.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                                    <TextField fx:id="txtCriminalDetailWard" layoutX="318.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                                    <Label layoutX="357.0" layoutY="39.0" text="Ward">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="390.0" layoutY="39.0" text="*" textFill="#ee1f1f" />
+                                    <TextField fx:id="txtCriminalDetailLocation" layoutX="472.0" layoutY="9.0" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: white;" />
+                                    <Label layoutX="520.0" layoutY="38.0" text="Location">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="572.0" layoutY="39.0" text="*" textFill="#ee1f1f" />
+                                    <TextField fx:id="txtCriminalDetailSublocation" layoutX="646.0" layoutY="9.0" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: white;" />
+                                    <Label layoutX="709.0" layoutY="39.0" text="Sublocation">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="782.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                                    <Label layoutX="882.0" layoutY="39.0" text="Status">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="924.0" layoutY="40.0" text="*" textFill="#ee1f1f" />
+                                    <ComboBox fx:id="comboboxCriminalDetailStatus" layoutX="828.0" layoutY="10.0" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                                 </children>
+                              </Pane>
+                              <VBox layoutX="10.0" layoutY="179.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                                 <children>
+                                    <DatePicker fx:id="datePickerBirthDte" prefHeight="31.0" prefWidth="161.0">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </DatePicker>
+                                    <Label text="Date of birth">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="txtCriminalDetailBornIn" prefHeight="31.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Born In">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <ComboBox fx:id="comboBoxCriminalDetailCityProvince" prefHeight="34.0" prefWidth="163.0">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <Label text="Province">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="217.0" layoutY="179.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                                 <children>
+                                    <TextField fx:id="txtCriminalDetailID" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="National ID">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="txtCriminalDetailEmail" onAction="#validateEmail" prefHeight="36.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Email">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="txtCriminalDetailPhone" layoutX="26.0" layoutY="26.0" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Phone No">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="424.0" layoutY="179.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                                 <children>
+                                    <TextField fx:id="txtCriminalDetailPostallAddress" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Postal Address">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="txtCriminalDetailZipCode" prefHeight="36.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="zip  Code">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="txtCriminalDetailCity" layoutX="26.0" layoutY="26.0" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="City/Town">
+                                       <VBox.margin>
+                                          <Insets left="70.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Pane layoutX="628.0" layoutY="179.0" prefHeight="224.0" prefWidth="382.0" style="-fx-border-color: #737373;">
+                                 <children>
+                                    <Label layoutX="150.0" layoutY="6.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="3.0" layoutY="31.0" prefHeight="190.0" prefWidth="184.0">
+                                       <children>
+                                          <Label layoutX="61.0" layoutY="6.0" text="Right hand" underline="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="4.0" layoutY="48.0" text="Right Thumb" />
+                                          <Label layoutY="77.0" text="First Finger" />
+                                          <Label layoutY="106.0" text="Second Finger" />
+                                          <Label layoutX="-2.0" layoutY="132.0" text="Third Finger" />
+                                          <Label layoutX="-2.0" layoutY="158.0" text="Small finger" />
+                                          <CheckBox fx:id="RightThumbCheckBox" layoutX="111.0" layoutY="44.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="22.0" />
+                                          <CheckBox fx:id="FirstfingerRightCheckBox" layoutX="111.0" layoutY="73.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="5.0" />
+                                          <CheckBox fx:id="ThirdfingerRightCheckBox" layoutX="111.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="5.0" />
+                                          <CheckBox fx:id="SmallfingerRightCheckBox" layoutX="111.0" layoutY="154.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="5.0" />
+                                          <CheckBox fx:id="SecondfingerRightCheckBox" layoutX="111.0" layoutY="102.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="5.0" />
+                                          <ProgressIndicator fx:id="rightThumbProgress" layoutX="148.0" layoutY="44.0" prefHeight="25.0" prefWidth="22.0" />
+                                          <ProgressIndicator fx:id="firstFingerProgress" layoutX="148.0" layoutY="74.0" prefHeight="25.0" prefWidth="22.0" />
+                                          <ProgressIndicator fx:id="secondFingerProgress" layoutX="148.0" layoutY="103.0" prefHeight="25.0" prefWidth="22.0" />
+                                          <ProgressIndicator fx:id="thirdFingerProgress" layoutX="148.0" layoutY="128.0" prefHeight="25.0" prefWidth="22.0" />
+                                          <ProgressIndicator fx:id="fouthFingerProgress" layoutX="148.0" layoutY="154.0" prefHeight="25.0" prefWidth="22.0" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="191.0" layoutY="31.0" prefHeight="190.0" prefWidth="184.0">
+                                       <children>
+                                          <Label layoutX="61.0" layoutY="6.0" text="Left Hand" underline="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Separator layoutX="-3.0" layoutY="20.0" orientation="VERTICAL" prefHeight="171.0" prefWidth="5.0" style="-fx-background-color: #737373;" />
+                                          <Label layoutX="4.0" layoutY="44.0" text="Left Thumb" />
+                                          <Label layoutX="5.0" layoutY="73.0" text="First Finger" />
+                                          <Label layoutX="5.0" layoutY="102.0" text="Second Finger" />
+                                          <Label layoutX="3.0" layoutY="128.0" text="Third Finger" />
+                                          <Label layoutX="3.0" layoutY="154.0" text="Small finger" />
+                                          <CheckBox fx:id="LeftThumbCheckBox" layoutX="116.0" layoutY="40.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="22.0" />
+                                          <CheckBox fx:id="FirstfingerLeftCheckBox" layoutX="116.0" layoutY="69.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="5.0" />
+                                          <CheckBox fx:id="ThirdfingerLeftCheckBox" layoutX="116.0" layoutY="124.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="5.0" />
+                                          <CheckBox fx:id="smallfingerLeftCheckBox" layoutX="116.0" layoutY="150.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="5.0" />
+                                          <CheckBox fx:id="SecondfingerLeftCheckBox" layoutX="116.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="5.0" />
+                                          <ProgressIndicator fx:id="leftThumbProgress" layoutX="153.0" layoutY="41.0" prefHeight="25.0" prefWidth="22.0" />
+                                          <ProgressIndicator fx:id="firstLeftFingerProgress" layoutX="153.0" layoutY="69.0" prefHeight="25.0" prefWidth="22.0" />
+                                          <ProgressIndicator fx:id="secondLeftFingerProgress" layoutX="153.0" layoutY="102.0" prefHeight="25.0" prefWidth="22.0" />
+                                          <ProgressIndicator fx:id="thirdLeftFingerProgress" layoutX="153.0" layoutY="130.0" prefHeight="25.0" prefWidth="22.0" />
+                                          <ProgressIndicator fx:id="fourthLeftFingerProgress" layoutX="153.0" layoutY="151.0" prefHeight="25.0" prefWidth="22.0" />
+                                       </children>
+                                    </Pane>
+                                    <Button fx:id="btnEnrollFingerPrint" layoutX="150.0" layoutY="3.0" mnemonicParsing="false" onAction="#buttonAction" text="Enroll FingerPrint" />
+                                    <Label fx:id="lbFingerDisplay" layoutX="14.0" layoutY="15.0" prefHeight="17.0" prefWidth="107.0" text="Finger Dispaly" />
+                                    <ComboBox fx:id="comboDisplayPorts" layoutX="261.0" layoutY="3.0" prefHeight="25.0" prefWidth="111.0" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="9.0" layoutY="415.0" prefHeight="45.0" prefWidth="998.0" style="-fx-background-color: #00162d;">
+                                 <children>
+                                    <Button fx:id="btncriminaldetailsNext" layoutX="890.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="82.0" text="Next">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Button>
+                                    <Button fx:id="btncriminaldetailsUpdate" layoutX="890.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="82.0" text="Update">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnRefreshScanner" layoutX="643.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonAction" text="Refresh FingerPrint Scanner">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                              <Label layoutX="14.0" layoutY="6.0" text="Criminal Details">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Label layoutX="462.0" layoutY="694.0" text="Designed By Benson Owino Opondo KIBABII UNIVERSITY" textFill="#d7c1c1">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="962.0" layoutY="695.0" text="Copyright  2020" textFill="#d3cccc">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+<!--      <FontAwesomeIconView fill="#e8dddd" glyphName="AT" layoutX="949.0" layoutY="710.0" size="15.0" text="" />-->
+   </children>
+</AnchorPane>

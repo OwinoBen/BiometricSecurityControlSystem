@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1015.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="paneUpdate" prefHeight="672.0" prefWidth="1016.0">
+         <children>
+            <Pane prefHeight="102.0" prefWidth="1015.0" style="-fx-background-color: &quot;0x3F3F3F&quot;;">
+               <children>
+                  <Label layoutX="136.0" layoutY="21.0" text="CRIMINAL NO  :" textFill="#bfb8b8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="137.0" layoutY="62.0" text="CRIMINAL        :" textFill="#bfb8b8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCriminalNo" editable="false" layoutX="243.0" layoutY="17.0" prefHeight="29.0" prefWidth="246.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0; -fx-text-fill: &quot;0xEECB89&quot;; -fx-font-we: bold; -fx-alignment: center;" styleClass="cell">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtCriminal" alignment="CENTER" editable="false" layoutX="243.0" layoutY="57.0" prefHeight="29.0" prefWidth="246.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0; -fx-text-fill: &quot;0xEECB89&quot;;" styleClass="cell">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="508.0" layoutY="19.0" prefHeight="20.0" prefWidth="97.0" text="CASE NO  :" textFill="#bfb8b8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="508.0" layoutY="62.0" prefHeight="20.0" prefWidth="72.0" text="STATUS    :" textFill="#bfb8b8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCaseNoDisplay" editable="false" layoutX="581.0" layoutY="17.0" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0;" styleClass="cell">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtStatus" editable="false" layoutX="580.0" layoutY="57.0" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0;" styleClass="cell">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="790.0" layoutY="21.0" prefHeight="20.0" prefWidth="97.0" text="CASE STATUS  :" textFill="#bfb8b8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="caseStatus" editable="false" layoutX="895.0" layoutY="15.0" prefHeight="29.0" prefWidth="106.0" style="-fx-background-color: &quot;0x232322&quot;; -fx-background-radius: 0;" styleClass="cell">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="14.0" layoutY="10.0" prefHeight="75.0" prefWidth="106.0">
+                     <children>
+                        <ImageView fx:id="viewImage" fitHeight="75.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" />
+                        <FontAwesomeIconView fx:id="userphoto" glyphName="USER" layoutX="24.0" layoutY="66.0" opacity="0.5" size="80" />
+                        <Button fx:id="btnUpload" mnemonicParsing="false" onAction="#chooseFile" opacity="0.24" prefHeight="75.0" prefWidth="106.0" style="-fx-background-color: gray;" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="9.0" layoutY="627.0" prefHeight="45.0" prefWidth="998.0" style="-fx-background-color: &quot;0x838383&quot;;">
+               <children>
+                  <Button fx:id="btnExit" layoutX="887.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="97.0" text="EXIT">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="updateCriminalDetail" layoutX="580.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Criminal Details">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="updateStatement" layoutX="286.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Stament">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="updateCaseStatus" layoutX="27.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Case Status">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="895.0" layoutY="30.0" size="20" />
+               </children>
+            </Pane>
+            <Pane layoutX="2.0" layoutY="108.0" prefHeight="512.0" prefWidth="1009.0" style="-fx-background-color: &quot;0xC0C0C0&quot;;">
+               <children>
+                  <Pane layoutX="7.0" layoutY="14.0" prefHeight="75.0" prefWidth="992.0" style="-fx-border-color: #737373;">
+                     <children>
+                        <TextField fx:id="txtCriminalDetailLastName" layoutX="14.0" layoutY="13.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <Label layoutX="60.0" layoutY="44.0" text="Last Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="123.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtCriminalDetailFirstName" layoutX="223.0" layoutY="13.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <Label layoutX="269.0" layoutY="44.0" text="First Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="332.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtCriminalDetailMiddleName" layoutX="439.0" layoutY="14.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <Label layoutX="485.0" layoutY="45.0" text="Middle Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="691.0" layoutY="43.0" text="Nationality">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="759.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
+                        <ComboBox fx:id="comboboxCrinalDetailNationality" layoutX="650.0" layoutY="13.0" prefHeight="29.0" prefWidth="164.0" style="-fx-background-color: #FFFFFF;" />
+                        <Label layoutX="875.0" layoutY="43.0" text="Gender">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="919.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
+                        <ComboBox fx:id="comboboxCrinalDetailGender" layoutX="834.0" layoutY="13.0" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                     </children>
+                  </Pane>
+                  <VBox layoutX="23.0" layoutY="215.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                     <children>
+                        <TextField fx:id="txtCriminalDetailID" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="National ID">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtCriminalDetailEmail" onAction="#validateEmail" prefHeight="36.0" prefWidth="163.0" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Email">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtCriminalDetailPhone" layoutX="26.0" layoutY="26.0" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Phone No">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="252.0" layoutY="215.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                     <children>
+                        <TextField fx:id="txtCriminalDetailPostallAddress" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Postal Address">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtCriminalDetailZipCode" prefHeight="36.0" prefWidth="163.0" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="zip  Code">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtCriminalDetailCity" layoutX="26.0" layoutY="26.0" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="City/Town">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="533.0" layoutY="215.0" prefHeight="224.0" prefWidth="195.0" style="-fx-border-color: #737373;">
+                     <children>
+                        <DatePicker fx:id="datePickerBirthDte" prefHeight="31.0" prefWidth="161.0">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <Label text="Date of birth">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtCriminalDetailBornIn" prefHeight="31.0" prefWidth="163.0" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Born In">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxCriminalDetailCityProvince" prefHeight="34.0" prefWidth="163.0">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <Label text="Province">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Pane layoutX="6.0" layoutY="121.0" prefHeight="67.0" prefWidth="992.0" style="-fx-border-color: #737373;">
+                     <children>
+                        <TextField fx:id="txtCriminalDetailCounty" layoutX="14.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                        <Label layoutX="60.0" layoutY="40.0" text="county">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="102.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtCriminalDetailConstituency" layoutX="165.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                        <Label layoutX="210.0" layoutY="40.0" text="Constinuency">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="292.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtCriminalDetailWard" layoutX="318.0" layoutY="9.0" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                        <Label layoutX="357.0" layoutY="39.0" text="Ward">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="390.0" layoutY="39.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtCriminalDetailLocation" layoutX="472.0" layoutY="9.0" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: white;" />
+                        <Label layoutX="520.0" layoutY="38.0" text="Location">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="572.0" layoutY="39.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtCriminalDetailSublocation" layoutX="646.0" layoutY="9.0" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: white;" />
+                        <Label layoutX="709.0" layoutY="39.0" text="Sublocation">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="782.0" layoutY="41.0" text="*" textFill="#ee1f1f" />
+                        <Label layoutX="882.0" layoutY="39.0" text="Status">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="924.0" layoutY="40.0" text="*" textFill="#ee1f1f" />
+                        <ComboBox fx:id="comboboxCriminalDetailStatus" layoutX="828.0" layoutY="10.0" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="748.0" layoutY="215.0" prefHeight="217.0" prefWidth="246.0" style="-fx-border-color: #737373;">
+                     <children>
+                        <TextArea fx:id="updateStatement" layoutY="1.0" prefHeight="217.0" prefWidth="246.0" promptText="UPDATE STATEMENT HERE." />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

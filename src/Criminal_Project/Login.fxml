@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>-->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="802.0" style="-fx-border-color: &quot;0x780303&quot;; -fx-border-style: none;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Criminal_Project.LoginController">
+   <children>
+      <Pane layoutY="1.0" prefHeight="539.0" prefWidth="802.0" style="-fx-background-color: #002346;">
+         <children>
+            <Pane layoutX="196.0" layoutY="83.0" prefHeight="341.0" prefWidth="446.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="24.0" layoutY="11.0" style="-fx-background-color: white;" text="Login">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Pane layoutX="-12.0" layoutY="84.0" prefHeight="52.0" prefWidth="470.0" style="-fx-background-color: &quot;0xC7C7C6&quot;;">
+                     <children>
+                        <TextField fx:id="txtUsername" layoutX="74.0" layoutY="8.0" prefHeight="37.0" prefWidth="364.0" promptText="Username" style="-fx-background-color: &quot;0xFEFEFD&quot;; -fx-alignment: center;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+<!--                        <FontAwesomeIconView glyphName="USER" layoutX="31.0" layoutY="36.0" opacity="0.35" size="30" />-->
+                     </children>
+                  </Pane>
+                  <Pane layoutX="-12.0" layoutY="148.0" prefHeight="52.0" prefWidth="470.0" style="-fx-background-color: &quot;0xC7C7C6&quot;;">
+                     <children>
+                        <PasswordField fx:id="txtPassword" layoutX="73.0" layoutY="7.0" prefHeight="39.0" prefWidth="364.0" promptText="Password" style="-fx-background-color: &quot;0xFEFEFD&quot;; -fx-alignment: center;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </PasswordField>
+<!--                        <FontAwesomeIconView glyphName="KEY" layoutX="34.0" layoutY="37.0" opacity="0.35" size="25" />-->
+                     </children>
+                  </Pane>
+                  <Button fx:id="btnLogin" accessibleRole="IMAGE_VIEW" alignment="CENTER" layoutX="4.0" layoutY="294.0" mnemonicParsing="false" onAction="#Login" prefHeight="44.0" prefWidth="439.0" style="-fx-background-color: #002346; -fx-text-fill: &quot;0xFEFEFD&quot;;" text="Login" textFill="#453e3e">
+                     <font>
+                        <Font name="Algerian" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <ComboBox fx:id="combobox" layoutX="103.0" layoutY="223.0" opacity="0.73" prefHeight="25.0" prefWidth="274.0" promptText="Login As" style="-fx-background-color: &quot;0xC7C7C6&quot;; -fx-alignment: center;" />
+                  <Label fx:id="status" layoutX="337.0" layoutY="23.0" prefHeight="19.0" prefWidth="81.0" style="-fx-alignment: center; -fx-text-fill: green; -fx-background-color: &quot;0xFEFEFD&quot;;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="loginStatus" layoutX="103.0" layoutY="50.0" prefHeight="25.0" prefWidth="234.0" style="-fx-background-color: &quot;0xFEFEFD&quot;; -fx-alignment: center;">
+                     <font>
+                        <Font name="Times New Roman" size="13.0" />
+                     </font>
+                  </Label>
+<!--                  <FontAwesomeIconView glyphName="LOCK" layoutX="14.0" layoutY="40.0" opacity="0.51" size="30" />-->
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
