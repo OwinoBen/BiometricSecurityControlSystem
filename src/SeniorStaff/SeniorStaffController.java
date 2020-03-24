@@ -1274,7 +1274,7 @@ public class SeniorStaffController implements Initializable, Runnable {
                                 pst3.setString(1, txtxFIRID.getText());
                                 pst3.setString(2, incidentDate.getEditor().getText());
 //                        pst3.setString(3, incedentTime.getEditor().getText());
-                                pst3.setString(3, labelTime.getText());
+                                pst3.setString(3, labelDate.getText());
                                 pst3.setString(4, incedentPlace.getText());
 //                        pst3.setString(5, timeLodged.getEditor().getText());
                                 pst3.setString(5, labelTime.getText());

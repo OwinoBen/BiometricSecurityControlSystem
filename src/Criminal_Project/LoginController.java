@@ -125,6 +125,7 @@ public class LoginController implements Initializable {
 
             seniorStaff.setScene(scene);
             seniorStaff.setTitle("Dashboard");
+            seniorStaff.getIcons().add(new Image("file:icon.jpg"));
             seniorStaff.setResizable(false);
 
             seniorStaff.show();

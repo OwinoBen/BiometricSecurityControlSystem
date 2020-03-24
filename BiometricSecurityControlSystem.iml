@@ -7,16 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../BiometricProject_FinalYear/Library/mysql-connector-java-5.0.8-bin.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../BiometricProject_FinalYear/Library/jssc.jar!/" />
@@ -25,52 +16,16 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../ZipedFiles/fontawesomefx-8.9.jar!/" />
+          <root url="jar://$MODULE_DIR$/../BiometricProject_FinalYear/Library/mysql-connector-java-5.0.8-bin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../SearchBar.fontawesomefx-glyphsbrowser-1.3.0/fontawesomefx-glyphsbrowser-1.3.0/lib/fontawesomefx-commons-8.15.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../ZipedFiles/jfoenix-9.0.8.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../SearchBar.fontawesomefx-glyphsbrowser-1.3.0/fontawesomefx-glyphsbrowser-1.3.0/lib/fontawesomefx-controls-8.15.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../SearchBar.fontawesomefx-glyphsbrowser-1.3.0/fontawesomefx-glyphsbrowser-1.3.0/lib/fontawesomefx-icons525-3.0.0-4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../ZipedFiles/jfoenix-8.0.8.jar!/" />
@@ -79,5 +34,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../ZipedFiles/fontawesomefx-8.9.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="io.github.typhon0:AnimateFX:1.2.1" level="project" />
   </component>
 </module>
