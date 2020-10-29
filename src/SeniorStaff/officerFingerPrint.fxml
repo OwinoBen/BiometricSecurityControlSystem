@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="429.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SeniorStaff.OfficerFingerPrint">
+   <children>
+      <ComboBox fx:id="comboboxOfficerFinger" layoutX="402.0" layoutY="43.0" prefHeight="34.0" prefWidth="176.0" promptText="---Select Arduino Port---">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ComboBox>
+      <Label fx:id="lbFingerDisplay" layoutX="97.0" layoutY="52.0" text="Display fingerPrint" />
+      <Button fx:id="btnEnrollFingerPrint" layoutX="97.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonAction" text="EnrollFinger" />
+      <Button fx:id="btnRefreshScanner" layoutX="195.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="17.0" prefWidth="95.0" text="Refresh Scaner" />
+      <Button fx:id="btnExit" layoutX="305.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="25.0" prefWidth="98.0" text="Exit" />
+   </children>
+</AnchorPane>

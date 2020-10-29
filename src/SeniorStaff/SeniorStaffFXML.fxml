@@ -3,6 +3,7 @@
 <!--<?import com.jfoenix.controls.JFXTimePicker?>-->
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -39,7 +40,7 @@
                   <Font name="Times New Roman Italic" size="12.0" />
                </font>
             </Label>
-            <ImageView fx:id="imageView" fitHeight="58.0" fitWidth="78.0" pickOnBounds="true">
+            <ImageView fx:id="imageView" fitHeight="58.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
 <!--                  <Image url="@../../../Downloads/Music/office-1730940__340.jpg" />-->
                </image>
@@ -196,99 +197,6 @@
                               </Label>
                            </children>
                         </Pane>
-                     </children>
-                  </Pane>
-               </children>
-            </Pane>
-            <Pane fx:id="officerPane" prefHeight="570.0" prefWidth="1050.0" style="-fx-background-color: &quot;0xC0C0C0&quot;;">
-               <children>
-                  <Pane layoutX="14.0" layoutY="8.0" prefHeight="513.0" prefWidth="1009.0" style="-fx-border-color: #737373;">
-                     <children>
-                        <TextField fx:id="txtOfficerLastName" layoutX="184.0" layoutY="92.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
-                        <Label layoutX="230.0" layoutY="123.0" text="Last Name">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="123.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
-                        <TextField fx:id="txtOfficerFirstName" layoutX="393.0" layoutY="92.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
-                        <Label layoutX="439.0" layoutY="123.0" text="First Name">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="332.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
-                        <TextField fx:id="txtOfficerMiddleName" layoutX="609.0" layoutY="93.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
-                        <Label layoutX="655.0" layoutY="124.0" text="Middle Name">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="759.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
-                        <TableView fx:id="officerTable" layoutX="152.0" layoutY="263.0" prefHeight="251.0" prefWidth="682.0">
-                           <columns>
-                              <TableColumn fx:id="colmofficerId" prefWidth="107.0" text="OFFICER ID" />
-                              <TableColumn fx:id="colmOfficerEmail" prefWidth="250.0" text="EMAIL" />
-                              <TableColumn fx:id="colmOfficerRank" prefWidth="143.0" text="RANK" />
-                              <TableColumn fx:id="colmOfficerName" prefWidth="181.0" text="NAME" />
-                           </columns>
-                        </TableView>
-                        <TextField fx:id="officerSearch" layoutX="405.0" layoutY="225.0" prefHeight="31.0" prefWidth="200.0" promptText="Search Officer" style="-fx-background-color: white;">
-                           <font>
-                              <Font name="Times New Roman Bold" size="14.0" />
-                           </font>
-                        </TextField>
-<!--                        <FontAwesomeIconView fill="#6b5959" glyphName="SEARCH" layoutX="588.0" layoutY="247.0" opacity="0.71" size="18" />-->
-                        <TextField fx:id="txtOfficerId" alignment="CENTER" layoutX="400.0" layoutY="10.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
-                        <Label layoutX="462.0" layoutY="58.0" text="OFFICER ID">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtOfficerRank" layoutX="184.0" layoutY="17.0" prefHeight="31.0" prefWidth="200.0" promptText="Enter Valid Phone Number" style="-fx-background-color: white;" />
-                        <Label layoutX="227.0" layoutY="185.0" text="Rank">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="436.0" layoutY="185.0" text="Password">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtOfficerEmail" layoutX="659.0" layoutY="17.0" prefHeight="31.0" prefWidth="200.0" promptText="Enter Valid Email Address" style="-fx-background-color: white;" />
-                        <Label layoutX="652.0" layoutY="186.0" text="Confirm Password">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <ComboBox fx:id="ComboBoxOfficerRank" layoutX="199.0" layoutY="157.0" prefWidth="150.0" />
-                        <PasswordField fx:id="txtOfficerPass" layoutX="394.0" layoutY="152.0" prefHeight="30.0" prefWidth="195.0" />
-                        <PasswordField fx:id="txtCofficeronfirmPass" layoutX="640.0" layoutY="155.0" prefHeight="30.0" prefWidth="195.0" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="15.0" layoutY="521.0" prefHeight="33.0" prefWidth="1009.0" style="-fx-background-color: #00162d;" stylesheets="@staff.css">
-                     <children>
-                        <Button fx:id="btnOfficerExit" layoutX="887.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="97.0" text="EXIT">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="btnOfficerUpdate" layoutX="582.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="176.0" text="UPDATE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="btnOfficerAdd" layoutX="287.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="176.0" text="ADD OFFICER">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Button>
-<!--                        <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="896.0" layoutY="23.0" size="20" />-->
                      </children>
                   </Pane>
                </children>
@@ -549,68 +457,6 @@
                               <TextArea fx:id="textAreaStatement" layoutY="1.0" prefHeight="217.0" prefWidth="246.0" promptText="UPDATE STATEMENT HERE." />
                            </children>
                         </Pane>
-                     </children>
-                  </Pane>
-               </children>
-            </Pane>
-            <Pane fx:id="crininalsListPane" layoutX="-1.0" prefHeight="570.0" prefWidth="1042.0" styleClass="borderPane" stylesheets="@staff.css">
-               <children>
-                  <Pane layoutX="14.0" layoutY="61.0" prefHeight="448.0" prefWidth="1015.0" style="-fx-background-color: white;">
-                     <children>
-                        <TableView fx:id="tableView" editable="true" layoutX="-10.0" onSort="#handleClicks" opacity="0.87" prefHeight="408.0" prefWidth="990.0" style="-fx-border-color: &quot;0xDBDBDB&quot;;" styleClass="column-header-background" stylesheets="@staff.css">
-                           <columns>
-                              <TableColumn fx:id="tableCriminal" prefWidth="157.0" text="CRIMINAL NO" />
-                              <TableColumn fx:id="tableName" prefWidth="207.0" text="NAME" />
-                              <TableColumn fx:id="tableGender" prefWidth="159.0" text="GENDER" />
-                              <TableColumn fx:id="tableCase" prefWidth="180.0" text="CASE NO" />
-                              <TableColumn fx:id="tableStatus" prefWidth="138.0" resizable="false" text="STATUS" />
-                              <TableColumn fx:id="tableAction" prefWidth="198.0" text="ACTION" />
-                           </columns>
-                        </TableView>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="21.0" layoutY="514.0" prefHeight="38.0" prefWidth="1015.0" style="-fx-background-color: &quot;0XC0C0C0&quot;;">
-                     <children>
-<!--                        <FontAwesomeIconView fx:id="refersh" fill="#bc0a0a" glyphName="REFRESH" layoutX="24.0" layoutY="26.0" opacity="0.54" size="20" />-->
-                        <Button fx:id="btnProfile" layoutX="867.0" layoutY="5.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="View Profile" />
-                        <Pane layoutX="-22.0" layoutY="2.0" prefHeight="45.0" prefWidth="998.0" style="-fx-background-color: #00162d;" stylesheets="@staff.css">
-                           <children>
-                              <Button fx:id="btnExit" layoutX="887.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="97.0" text="EXIT">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="updateCriminalDetail" layoutX="580.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Criminal Details">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="updateStatement" layoutX="286.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Stament">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="updateCaseStatus" layoutX="27.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Case Status">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Button>
-      <!--                        <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="895.0" layoutY="30.0" size="20" />-->
-                           </children>
-                        </Pane>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="8.0" prefHeight="58.0" prefWidth="1026.0" style="-fx-background-color: &quot;0XDFDFDF&quot;;">
-                     <children>
-                        <TextField fx:id="txtSearch" alignment="CENTER" layoutX="715.0" layoutY="15.0" prefHeight="27.0" prefWidth="256.0" />
-                        <Label layoutX="958.0" layoutY="15.0" prefHeight="27.0" prefWidth="41.0" styleClass="search" stylesheets="@staff.css" />
-                        <ComboBox fx:id="comboClasification" layoutX="176.0" layoutY="16.0" prefHeight="27.0" prefWidth="219.0" style="-fx-background-color: white;" />
-                        <Label layoutX="52.0" layoutY="21.0" text="CLASSIFICATION :" textFill="#545454">
-                           <font>
-                              <Font name="Times New Roman" size="14.0" />
-                           </font>
-                        </Label>
-<!--                        <FontAwesomeIconView fx:id="search" fill="#949191" glyphName="SEARCH" layoutX="968.0" layoutY="34.0" size="15" styleClass="search" wrappingWidth="21.928571701049805" />-->
                      </children>
                   </Pane>
                </children>
@@ -1386,6 +1232,195 @@
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
                               </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="crininalsListPane" layoutX="-1.0" prefHeight="570.0" prefWidth="1042.0" styleClass="borderPane" stylesheets="@staff.css">
+               <children>
+                  <Pane layoutX="14.0" layoutY="61.0" prefHeight="448.0" prefWidth="1036.0" style="-fx-background-color: white;">
+                     <children>
+                        <TableView fx:id="tableView" editable="true" onSort="#handleClicks" opacity="0.87" prefHeight="408.0" prefWidth="990.0" style="-fx-border-color: &quot;0xDBDBDB&quot;;" styleClass="column-header-background" stylesheets="@staff.css">
+                           <columns>
+                              <TableColumn fx:id="tableCriminal" prefWidth="157.0" text="CRIMINAL NO" />
+                              <TableColumn fx:id="tableName" prefWidth="207.0" text="NAME" />
+                              <TableColumn fx:id="tableGender" prefWidth="159.0" text="GENDER" />
+                              <TableColumn fx:id="tableCase" prefWidth="180.0" text="CASE NO" />
+                              <TableColumn fx:id="tableStatus" prefWidth="138.0" resizable="false" text="STATUS" />
+                              <TableColumn fx:id="tableAction" prefWidth="198.0" text="ACTION" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="21.0" layoutY="514.0" prefHeight="38.0" prefWidth="1009.0" style="-fx-background-color: &quot;0XC0C0C0&quot;;">
+                     <children>
+<!--                        <FontAwesomeIconView fx:id="refersh" fill="#bc0a0a" glyphName="REFRESH" layoutX="24.0" layoutY="26.0" opacity="0.54" size="20" />-->
+                        <Button fx:id="btnProfile" layoutX="867.0" layoutY="5.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="View Profile" />
+                        <Pane layoutX="-8.0" layoutY="-4.0" prefHeight="45.0" prefWidth="1036.0" style="-fx-background-color: #00162d;" stylesheets="@staff.css">
+                           <children>
+                              <Button fx:id="btnExit" layoutX="887.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="97.0" text="EXIT">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="updateCriminalDetail" layoutX="580.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Criminal Details">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="updateStatement" layoutX="286.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Stament">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="updateCaseStatus" layoutX="27.0" layoutY="6.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="34.0" prefWidth="176.0" text="Update Case Status">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+      <!--                        <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="895.0" layoutY="30.0" size="20" />-->
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="12.0" prefHeight="58.0" prefWidth="1036.0" style="-fx-background-color: &quot;0XDFDFDF&quot;;">
+                     <children>
+                        <TextField fx:id="txtSearch" alignment="CENTER" layoutX="715.0" layoutY="15.0" prefHeight="27.0" prefWidth="256.0" />
+                        <Label layoutX="958.0" layoutY="15.0" prefHeight="27.0" prefWidth="41.0" styleClass="search" stylesheets="@staff.css" />
+                        <ComboBox fx:id="comboClasification" layoutX="176.0" layoutY="16.0" prefHeight="27.0" prefWidth="219.0" style="-fx-background-color: white;" />
+                        <Label layoutX="52.0" layoutY="21.0" text="CLASSIFICATION :" textFill="#545454">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </Label>
+<!--                        <FontAwesomeIconView fx:id="search" fill="#949191" glyphName="SEARCH" layoutX="968.0" layoutY="34.0" size="15" styleClass="search" wrappingWidth="21.928571701049805" />-->
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="officerPane" prefHeight="570.0" prefWidth="1050.0" style="-fx-background-color: &quot;0xC0C0C0&quot;;">
+               <children>
+                  <Pane layoutX="15.0" layoutY="521.0" prefHeight="33.0" prefWidth="1009.0" style="-fx-background-color: #00162d;" stylesheets="@staff.css">
+                     <children>
+                        <Button fx:id="btnOfficerExit" layoutX="887.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="97.0" text="EXIT">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnOfficerUpdate" layoutX="582.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="176.0" text="UPDATE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnOfficerAdd" layoutX="287.0" layoutY="4.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="29.0" prefWidth="176.0" text="ADD OFFICER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+<!--                        <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="896.0" layoutY="23.0" size="20" />-->
+                     </children>
+                  </Pane>
+                  <Pane layoutX="14.0" layoutY="8.0" prefHeight="513.0" prefWidth="1009.0" style="-fx-border-color: #737373;">
+                     <children>
+                        <TextField fx:id="txtOfficerLastName" layoutX="184.0" layoutY="92.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <Label layoutX="230.0" layoutY="123.0" text="Last Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="123.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtOfficerFirstName" layoutX="405.0" layoutY="92.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                        <Label layoutX="439.0" layoutY="123.0" text="First Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="332.0" layoutY="44.0" text="*" textFill="#ee1f1f" />
+                        <TextField fx:id="txtOfficerMiddleName" layoutX="640.0" layoutY="92.0" prefHeight="31.0" prefWidth="204.0" style="-fx-background-color: white;" />
+                        <Label layoutX="696.0" layoutY="123.0" text="Middle Name">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="759.0" layoutY="43.0" text="*" textFill="#ee1f1f" />
+                        <TableView fx:id="officerTable" layoutX="152.0" layoutY="263.0" prefHeight="251.0" prefWidth="682.0">
+                           <columns>
+                              <TableColumn fx:id="colmofficerId" prefWidth="107.0" text="OFFICER ID" />
+                              <TableColumn fx:id="colmOfficerEmail" prefWidth="250.0" text="EMAIL" />
+                              <TableColumn fx:id="colmOfficerRank" prefWidth="143.0" text="RANK" />
+                              <TableColumn fx:id="colmOfficerName" prefWidth="181.0" text="NAME" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="officerSearch" layoutX="405.0" layoutY="225.0" prefHeight="31.0" prefWidth="200.0" promptText="Search Officer" style="-fx-background-color: white;">
+                           <font>
+                              <Font name="Times New Roman Bold" size="14.0" />
+                           </font>
+                        </TextField>
+<!--                        <FontAwesomeIconView fill="#6b5959" glyphName="SEARCH" layoutX="588.0" layoutY="247.0" opacity="0.71" size="18" />-->
+                        <TextField fx:id="txtOfficerId" alignment="CENTER" layoutX="400.0" layoutY="10.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="462.0" layoutY="58.0" text="OFFICER ID">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtOfficerRank" layoutX="184.0" layoutY="17.0" prefHeight="31.0" prefWidth="200.0" promptText="Enter Valid Phone Number" style="-fx-background-color: white;" />
+                        <Label layoutX="227.0" layoutY="185.0" text="Rank">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="436.0" layoutY="185.0" text="Password">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtOfficerEmail" layoutX="645.0" layoutY="17.0" prefHeight="31.0" prefWidth="200.0" promptText="Enter Valid Email Address" style="-fx-background-color: white;" />
+                        <Label layoutX="652.0" layoutY="186.0" text="Confirm Password">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="ComboBoxOfficerRank" layoutX="199.0" layoutY="157.0" prefWidth="150.0" />
+                        <PasswordField fx:id="txtOfficerPass" layoutX="394.0" layoutY="152.0" prefHeight="30.0" prefWidth="195.0" />
+                        <PasswordField fx:id="txtCofficeronfirmPass" layoutX="640.0" layoutY="155.0" prefHeight="30.0" prefWidth="200.0" />
+                        <ImageView fitHeight="159.0" fitWidth="157.0" layoutX="14.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/finger.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnOfficerFinger" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#enrollOfficerFinger" opacity="0.18" prefHeight="163.0" prefWidth="157.0" style="-fx-background-color: #737373;" text="Button">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Label alignment="CENTER" layoutX="31.0" layoutY="158.0" opacity="0.98" text="ADD FINGERPRINTS" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </Label>
+                        <Pane fx:id="fingerPane" layoutX="89.0" layoutY="11.0" prefHeight="429.0" prefWidth="610.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <ComboBox fx:id="comboboxOfficerFinger" layoutX="417.0" layoutY="59.0" prefHeight="34.0" prefWidth="176.0" promptText="---Select Arduino Port---">
+                                 <cursor>
+                                    <Cursor fx:constant="CLOSED_HAND" />
+                                 </cursor>
+                              </ComboBox>
+                              <Label fx:id="lbFingerDisplay1" layoutX="112.0" layoutY="68.0" text="Display fingerPrint" />
+                              <Pane layoutY="365.0" prefHeight="58.0" prefWidth="610.0" style="-fx-background-color: #00162d;">
+                                 <children>
+                                    <Button fx:id="btnEnrollFingerPrint" layoutX="100.0" layoutY="19.0" mnemonicParsing="false" onAction="#buttonAction" stylesheets="@staff.css" text="EnrollFinger" />
+                                    <Button fx:id="btnRefreshScanner" layoutX="246.0" layoutY="19.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="17.0" prefWidth="95.0" stylesheets="@staff.css" text="Refresh Scaner" />
+                                    <Button fx:id="btnExit" layoutX="403.0" layoutY="19.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="25.0" prefWidth="98.0" stylesheets="@staff.css" text="Exit" />
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
                      </children>

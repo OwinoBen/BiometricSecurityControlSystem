@@ -12,6 +12,7 @@ import Staff.nationalityOption;
 import Staff.officer;
 import Staff.provinceOption;
 import Staff.statusOption;
+import animatefx.animation.*;
 import com.jfoenix.controls.JFXTimePicker;
 import dbUtill.dbConnection;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -30,6 +31,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -38,10 +40,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import jssc.SerialPort;
@@ -346,9 +350,9 @@ public class SeniorStaffController implements Initializable, Runnable {
     private PasswordField txtCofficeronfirmPass, txtOfficerPass;
 
     @FXML
-    private Button btnOfficerExit;
+    private Button btnOfficerExit,btnOfficerFinger;
     @FXML
-    private ComboBox<String> comboDisplayPorts;
+    private ComboBox<String> comboDisplayPorts, comboboxofficerPrint;
     @FXML
     private Button btnOfficerUpdate;
     @FXML
@@ -358,6 +362,11 @@ public class SeniorStaffController implements Initializable, Runnable {
 
     @FXML
     private Button btnOfficerAdd, btnRefreshScanner;
+    @FXML
+    private Pane fingerPane;
+    @FXML
+    private ComboBox<String> comboboxOfficerFinger;
+
 
 
     PreparedStatement pst = null;
@@ -405,10 +414,11 @@ public class SeniorStaffController implements Initializable, Runnable {
         criminalReg = "";
         this.con = new dbConnection();
 
-        btnOfficerAdd.setVisible(false);
-        btnOfficerUpdate.setVisible(false);
+        btnOfficerAdd.setVisible(true);
+        btnOfficerUpdate.setVisible(true);
 
-        paneUpdate.setVisible(false);
+        paneUpdate.setVisible(true);
+        fingerPane.setVisible(false);
 
         viewImage.setOnMouseClicked((MouseEvent e) -> {
             btnUpload.setVisible(true);
@@ -789,12 +799,31 @@ public class SeniorStaffController implements Initializable, Runnable {
             Pane root = loader.load(getClass().getResource("../Criminal_Project/Login.fxml").openStream());
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
+            primaryStage.initStyle(StageStyle.UNDECORATED);
             primaryStage.show();
-
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void enrollOfficerFinger(ActionEvent event){
+       /* try{
+            ((Node)event.getSource()).getScene().getWindow();
+            Stage primaryStage = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            Pane root = loader.load(getClass().getResource("../SeniorStaff/officerFingerPrint.fxml").openStream());
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.initStyle(StageStyle.UNDECORATED);
+            primaryStage.show();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        */
+        fingerPane.setVisible(true);
     }
 
     final void showDate() {
@@ -809,7 +838,6 @@ public class SeniorStaffController implements Initializable, Runnable {
     private int second;
 
     final void showTime() {
-
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             second = LocalDateTime.now().getSecond();
             minute = LocalDateTime.now().getMinute();
@@ -826,6 +854,12 @@ public class SeniorStaffController implements Initializable, Runnable {
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnDashboard) {
             dashBordPane.setStyle("-fx-background-color: blue");
+
+            ProgressIndicator progress = new ProgressIndicator();
+            VBox box = new VBox(progress);
+            box.setAlignment(Pos.CENTER);
+            box.setDisable(true);
+            dashBordPane.getChildren().add(box);
             dashBordPane.setVisible(true);
             addCriminalPane.setVisible(false);
             officerPane.setVisible(false);
@@ -836,6 +870,8 @@ public class SeniorStaffController implements Initializable, Runnable {
 
             //set panel name on the navigation label
             labelNavigation.setText("DashBoard");
+            new Tada(dashBordPane).play();
+
         }
         if (actionEvent.getSource() == btnCriminals) {
             dashBordPane.setStyle("-fx-background-color: blue");
@@ -848,6 +884,7 @@ public class SeniorStaffController implements Initializable, Runnable {
             paneUpdate.setVisible(false);
 
             labelNavigation.setText("Criminal List");
+            new Pulse(crininalsListPane).play();
         }
         if (actionEvent.getSource() == btnAddCriminal) {
 
@@ -865,6 +902,7 @@ public class SeniorStaffController implements Initializable, Runnable {
             casePane.setVisible(false);
             changePanel.setVisible(false);
             paneUpdate.setVisible(false);
+            new Pulse(addCriminalPane).play();
 
         }
         if (actionEvent.getSource() == btnOfficer) {
@@ -1494,12 +1532,6 @@ public class SeniorStaffController implements Initializable, Runnable {
                     alert.setTitle("BCAEACS");
                     alert.showAndWait();
 
-                } else if (!(petionerId.find() && petionerId.group().equals(txtOfficerId.getText()))) {
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setHeaderText("National Id should not be less than \n or more than 8 digits");
-                    alert.setTitle("BCAEACS");
-                    alert.showAndWait();
-
                 } else if (!(petphone.find() && petphone.group().equals(txtOfficerRank.getText()))) {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setHeaderText(null);
@@ -1542,6 +1574,15 @@ public class SeniorStaffController implements Initializable, Runnable {
                             alert.setHeaderText(null);
                             alert.setContentText("Officer Successfully Add");
                             alert.showAndWait();
+
+                            txtOfficerEmail.clear();
+                            txtOfficerFirstName.clear();
+                            txtOfficerLastName.clear();
+                            txtOfficerMiddleName.clear();
+                            txtOfficerPass.clear();
+                            txtCofficeronfirmPass.clear();
+                            txtOfficerRank.clear();
+
                             criminalDetailsPane.setVisible(false);
                             petionerPane.setVisible(false);
                             casePane.setVisible(true);
@@ -1858,13 +1899,14 @@ public class SeniorStaffController implements Initializable, Runnable {
         System.out.println("Available COM Ports:");
         for (String portName : portNames) {
             portListDisplay.add(portName);
-            comboDisplayPorts.setItems(portListDisplay);
+            comboboxOfficerFinger.setItems(portListDisplay);
             System.out.println(portName);
         }
 //        portList.setSelectionModel(portList.getValue());
 //        portList.getItems().addAll(portListDisplay);
 
     }
+
 
     @FXML
     public boolean connectToArduino() throws SerialPortTimeoutException, SerialPortException, InterruptedException {
@@ -1970,7 +2012,7 @@ public class SeniorStaffController implements Initializable, Runnable {
             if (arduinoPort.isOpened() && lbFingerDisplay.getText().equals("Connected")) {
                 return;
             }
-            selectedPort = comboDisplayPorts.getValue();
+            selectedPort = comboboxOfficerFinger.getValue();
 
             Platform.runLater(() -> {
                 try {
@@ -1982,13 +2024,16 @@ public class SeniorStaffController implements Initializable, Runnable {
         } else if (e.getSource().equals(btnExit)) {
             Platform.runLater(() -> {
                 disconnectFromArduino();
-                System.exit(1);
+//                System.exit(1);
+                fingerPane.setVisible(false);
+                ((javafx.scene.Node)e.getSource()).getScene().getWindow().hide();
                 arduinoThread.interrupt();
             });
         } else if (e.getSource().equals(btnRefreshScanner)) {
             Platform.runLater(() -> {
 //                lbReadingFinger.setText("Refreshing...");
                 refreshAvailablePorts();
+
 
                 try {
                     connectToArduino();
@@ -2005,6 +2050,34 @@ public class SeniorStaffController implements Initializable, Runnable {
         }
     }
 
+    public int fingerPrintCode(){
+        byte fingerPrintId = 1;
+
+        try {
+            Connection officerconnection = dbConnection.getConnection();
+
+            String officerSQL= "SELECT `finger_ID` FROM `officerfingerprint` ORDER BY finger_ID DESC LIMIT 1";
+            PreparedStatement officerStatement = officerconnection.prepareStatement(officerSQL);
+            ResultSet officerResult = officerStatement.executeQuery();
+
+            if(officerResult.next()){
+              int   finger = officerResult.getInt("finger_ID");
+                 String fingerId = String.valueOf(finger);
+                 fingerPrintId = Byte.parseByte(fingerId);
+                fingerPrintId++;
+
+                System.out.println(fingerPrintId);
+            }
+            else{
+                fingerPrintId = 1;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return fingerPrintId;
+    }
+
     public void Readingrduino() throws InterruptedException {
         arduinoThread = new Thread(() -> {
             Runnable updater = () -> {
@@ -2012,10 +2085,12 @@ public class SeniorStaffController implements Initializable, Runnable {
 
                     if (arduinoPort.getInputBufferBytesCount() > 0) {   //check size of buffer
                         String x = arduinoPort.readString();
+                        int arduinoFingerCode = fingerPrintCode();
                         System.out.println(x);
                         if (x.contains("Type in the ID # you want to save this finger as...")) {
-                            arduinoPort.writeBytes("1001".getBytes());
-                            rightThumbProgress.setVisible(true);
+//                            arduinoPort.writeBytes("arduinoFingerCode".getBytes());
+                            arduinoPort.writeByte((byte) arduinoFingerCode);
+//                            rightThumbProgress.setVisible(true);
                         }
                         if (x.contains("Image taken")) {
                             lbFingerDisplay.setText("Image taken");
@@ -2042,12 +2117,24 @@ public class SeniorStaffController implements Initializable, Runnable {
                             Thread.sleep(2000);
                         }
                         if (x.contains("Stored!")) {
-                            String text = "STORED SUCCESSFULY!!";
-                            lbFingerDisplay.setText(text);
+                            String fingerprintStorage = "INSERT INTO officerfingerprint(finger_ID, officer_ID) VALUES(?,?)";
+
+                            Connection con =  new dbConnection().getConnection();
+                            PreparedStatement officerFingerStorage = con.prepareStatement(fingerprintStorage);
+                            officerFingerStorage.setInt(1, arduinoFingerCode);
+                            officerFingerStorage.setString(2,txtOfficerId.getText());
+
+                            int save = officerFingerStorage.executeUpdate();
+
+                            if (save>0){
+                                String text = "STORED SUCCESSFULY!!";
+                                lbFingerDisplay.setText(text); 
+                            }
+
                             Thread.sleep(3000);
                         }
                     }
-                } catch (SerialPortException | InterruptedException e) {
+                } catch (SerialPortException | InterruptedException | SQLException e) {
                     e.printStackTrace();
                 }
             };
@@ -2078,8 +2165,8 @@ public class SeniorStaffController implements Initializable, Runnable {
         }
     }
 
-    //set Progress indicators visisbility false in the during initiakization
 
+    //set Progress indicators visisbility false during initiaization
     public void HideProgressIndicator() {
         rightThumbProgress.setVisible(false);
         firstFingerProgress.setVisible(false);

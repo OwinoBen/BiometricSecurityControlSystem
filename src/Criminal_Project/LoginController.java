@@ -2,6 +2,7 @@ package Criminal_Project;
 
 import SeniorStaff.SeniorStaffController;
 import Staff.StaffController;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -42,8 +44,21 @@ public class LoginController implements Initializable {
     @FXML
     private Label status;
     @FXML
-    private Label loginStatus;
+    private Label loginStatus, lbLoading;
+    @FXML
+    private ProgressBar loginProgressBar;
+    @FXML
+    private ProgressIndicator logingPrrogressIndicator;
+    @FXML
+    private Pane fingerPrintPane,manualLoginPane;
+    @FXML
+    public ImageView closeImage, fingerScanImage, okTick, accessGranted, accessDenied,XcloseAccessDenied;
+    @FXML
+    public Label lbConnected;
+    @FXML
+    public  ComboBox comboboxFingerPrint;
 
+    FingerPrintDriver fd = new FingerPrintDriver();
 
 
     public void LoginController(){
@@ -56,6 +71,8 @@ public class LoginController implements Initializable {
         comboBoxLogin=combobox;
         password=txtPassword;
         username=txtUsername;
+
+        lbConnected = fd.fingerlabel;
         /* call isdatabase connected from LoginModel to check if database is connected */
 
         if (model.isDatabaseConnected()){
@@ -67,7 +84,18 @@ public class LoginController implements Initializable {
         /* setting items in the combobox */
 
         this.combobox.setItems(FXCollections.observableArrayList(option.values()));
+        lbLoading.setVisible(false);
+        logingPrrogressIndicator.setVisible(false);
+        loginProgressBar.setVisible(false);
 
+        /*Image views Displays*/
+        fingerScanImage.setVisible(false);
+        okTick.setVisible(false);
+        accessGranted.setVisible(false);
+        accessDenied.setVisible(false);
+        XcloseAccessDenied.setVisible(false);
+
+        fd.refreshAvailablePorts(comboboxFingerPrint);
     }
 
     //login methods
@@ -89,13 +117,60 @@ public class LoginController implements Initializable {
 
                     /* using the login button ID to getScene and window */
                     Stage stage = (Stage) this.btnLogin.getScene().getWindow();
-                    stage.close();
+
                     switch ((this.combobox.getValue()).toString()) {
                         case "officer":
-                            staff();
+                            new Thread(()->{
+                                for (int i = 0; i<=100; i++){
+                                    final int progressPosition = i;
+                                    Platform.runLater(()->{
+                                        loginProgressBar.setProgress(progressPosition/100.0);
+                                        lbLoading.setVisible(true);
+                                        logingPrrogressIndicator.setVisible(true);
+                                        loginProgressBar.setVisible(false);
+
+                                        if (progressPosition == 100){
+                                            stage.close();
+                                            staff();
+                                        }
+                                    });
+                                    try{
+                                        Thread.sleep(50);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+                            }).start();
+
                             break;
                         case "sergent":
-                            seniorStaff();
+                            new Thread(()->{
+                                for (int i = 0; i<=100; i++){
+                                    final int progressPosition = i;
+                                    Platform.runLater(()->{
+                                        loginProgressBar.setProgress(progressPosition/100.0);
+
+                                        System.out.println("Progress value" + progressPosition);
+                                        lbLoading.setVisible(true);
+                                        logingPrrogressIndicator.setVisible(true);
+                                        loginProgressBar.setVisible(false);
+
+                                        if (progressPosition == 100){
+                                            stage.close();
+                                            seniorStaff();
+                                        }
+                                    });
+
+                                    try{
+                                        Thread.sleep(50);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                            }).start();
+
                             break;
 
                     }
@@ -158,6 +233,11 @@ public class LoginController implements Initializable {
 
         }
 
+    }
+
+    @FXML
+    public void refresh(){
+        fd.refreshAvailablePorts(comboboxFingerPrint);
     }
 
 }

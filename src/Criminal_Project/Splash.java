@@ -21,7 +21,7 @@ public class Splash  extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
+     }
 
     public void init() throws Exception{
         for(int i =1; i<= COUNT_LIMIT;i++){
